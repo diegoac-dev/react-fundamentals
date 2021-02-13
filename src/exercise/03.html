@@ -9,16 +9,23 @@
   <!-- 💣 remove this line
   <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
   💣 remove this line -->
+  <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
 
-  <script type="module">
+  <script type="text/babel">
     // 🐨 on the script tag above, change `type="module"`
     // to `type="text/babel"` so babel will compile this code for the browser to run.
 
     // 🐨 re-implement this using JSX!
-    const element = React.createElement('div', {
-      className: 'container',
-      children: 'Hello World',
-    })
+    // const element = React.createElement('div', {
+    //   className: 'container',
+    //   children: 'Hello World',
+    // })
+    const element = <div className="container">Hello World JSX</div>
+    const className = 'container-mine'
+    const children = 'Hello World WWW PROPS'
+    const elementTwo = <div className={className}>{children}</div>
+    const props = {children, className}
+    const elementThree = <div {...props} />
 
     // 💰 there are a few subtle differences between JSX and HTML. One such
     // difference is how you apply a class to an element in JSX is by using
@@ -26,6 +33,6 @@
     // 📜 You can learn the differences between JSX and HTML syntax from the React docs here:
     // https://reactjs.org/docs/dom-elements.html#differences-in-attributes
 
-    ReactDOM.render(element, document.getElementById('root'))
+    ReactDOM.render(elementThree, document.getElementById('root'))
   </script>
 </body>
